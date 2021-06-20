@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_top"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClick"
+            android:padding="10dp"
+            android:layout_marginStart="8dp"
+            android:background="@mipmap/ic_back"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/bg_bottom"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RadioGroup
+            android:id="@+id/rg_modes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="30dp">
+
+            <RadioButton
+                android:id="@+id/rb_doodle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/btn_doodle"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:textColor="#FFF" />
+
+            <Space
+                android:id="@+id/sticker_img_space"
+                android:layout_width="@dimen/image_mode_space"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <ImageButton
+                android:id="@+id/sticker_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:visibility="gone"
+                android:src="@mipmap/ic_emoji"
+                android:textColor="#FFF" />
+
+            <Space
+                android:layout_width="@dimen/image_mode_space"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:id="@+id/btn_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:src="@mipmap/ic_draw_bg_none"
+                android:textColor="#FFF" />
+
+            <Space
+                android:layout_width="@dimen/image_mode_space"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:id="@+id/btn_clip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:src="@mipmap/ic_clip"
+                android:textColor="#FFF" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClick"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/image_done"
+            android:textColor="@color/image_color_primary"
+            android:textSize="15sp" />
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_op_sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_action_bar">
+
+        <ViewSwitcher
+            android:id="@+id/vs_op_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:measureAllChildren="true"
+            app:layout_constraintStart_toStartOf="@+id/layout_op_sub"
+            app:layout_constraintEnd_toEndOf="@+id/layout_op_sub"
+            app:layout_constraintBottom_toBottomOf="@+id/layout_op_sub">
+
+            <com.vachel.editor.ui.CustomColorGroup
+                android:id="@+id/cg_colors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                app:hasExtraType="true"
+                android:orientation="horizontal"/>
+
+        </ViewSwitcher>
+
+        <ImageButton
+            android:id="@+id/btn_undo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_gravity="end"
+            android:onClick="onClick"
+            android:src="@mipmap/ic_undo"
+            app:layout_constraintEnd_toEndOf="@+id/vs_op_sub"
+            android:padding="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/vs_op_sub"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

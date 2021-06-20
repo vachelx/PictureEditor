@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animated-rotate
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:duration="100"
+    android:toDegrees="360"
+    android:drawable="@mipmap/progress"
+    android:fromDegrees="0">
+
+</animated-rotate>

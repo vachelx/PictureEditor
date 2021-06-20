@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="emoji_drawer_size">28dp</dimen>
+    <dimen name="emoji_drawer_item_padding">8dp</dimen>
+    <dimen name="emoji_drawer_indicator_height">2dp</dimen>
+    <dimen name="emoji_drawer_left_right_padding">8dp</dimen>
+</resources>

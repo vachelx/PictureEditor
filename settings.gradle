@@ -1,0 +1,3 @@
+include ':editor'
+include ':app'
+rootProject.name = "PictureEditor"

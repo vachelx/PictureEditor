@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff333333"
+        android:orientation="horizontal">
+
+        <com.astuetz.PagerSlidingTabStrip
+            android:id="@+id/tabs"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/backspace"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/emoji_tab_underline"
+            android:paddingLeft="@dimen/emoji_drawer_left_right_padding"
+            android:paddingRight="@dimen/emoji_drawer_left_right_padding"
+            android:src="@drawable/ic_emoji_backspace" />
+
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/emoji_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff333333"
+        android:visibility="visible" />
+
+</LinearLayout>

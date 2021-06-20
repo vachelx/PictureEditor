@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:background="@drawable/bg_bottom"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/action_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/ib_clip_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:padding="8dp"
+                android:text="@string/image_cancel"
+                android:textColor="@color/image_color_white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintEnd_toStartOf="@id/tv_clip_reset"
+                app:layout_constraintBottom_toBottomOf="@id/action_container"
+                app:layout_constraintStart_toStartOf="@id/action_container"
+                app:layout_constraintTop_toTopOf="@id/action_container"/>
+
+            <ImageView
+                android:id="@+id/tv_clip_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="onClick"
+                android:padding="8dp"
+                android:src="@mipmap/ic_reset"
+                app:layout_constraintBottom_toBottomOf="@id/action_container"
+                app:layout_constraintEnd_toStartOf="@id/ib_clip_rotate"
+                app:layout_constraintStart_toEndOf="@id/ib_clip_cancel"
+                app:layout_constraintTop_toTopOf="@id/action_container" />
+
+            <ImageButton
+                android:id="@+id/ib_clip_rotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@null"
+                android:onClick="onClick"
+                android:padding="8dp"
+                android:src="@mipmap/ic_rotate"
+                app:layout_constraintBottom_toBottomOf="@id/action_container"
+                app:layout_constraintEnd_toStartOf="@+id/ib_clip_done"
+                app:layout_constraintStart_toEndOf="@id/tv_clip_reset"
+                app:layout_constraintTop_toTopOf="@id/action_container" />
+
+            <TextView
+                android:id="@+id/ib_clip_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:onClick="onClick"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:gravity="center"
+                android:text="@string/image_done"
+                android:textColor="@color/image_color_white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/action_container"
+                app:layout_constraintEnd_toEndOf="@id/action_container"
+                app:layout_constraintStart_toEndOf="@id/ib_clip_rotate"
+                app:layout_constraintTop_toTopOf="@id/action_container" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vachel.editor">
+
+    <application>
+        <activity android:name=".PictureEditActivity"
+            android:theme="@style/EditTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:exported="false"/>
+
+    </application>
+
+</manifest>

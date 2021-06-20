@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <declare-styleable name="ColorRadio" tools:ignore="ResourceName">
+        <attr name="image_color" format="color" />
+        <attr name="image_stroke_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="CustomColorGroup" tools:ignore="ResourceName">
+        <attr name="hasExtraType" format="boolean" />
+    </declare-styleable>
+</resources>
