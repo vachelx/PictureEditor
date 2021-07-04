@@ -404,6 +404,7 @@ public class PictureEditView extends FrameLayout implements Runnable, ScaleGestu
 
     private boolean onPathDone() {
         if (!mDrawPen.isValidPath()) {
+            mDrawPen.reset();
             return false;
         }
         mPicPresenter.addPath(mDrawPen.toPath(), getScrollX(), getScrollY());
