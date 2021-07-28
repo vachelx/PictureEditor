@@ -34,7 +34,7 @@ public class DrawPen extends PaintPath {
     public void lineTo(float x, float y) {
         this.path.lineTo(x, y);
         if (!isValid) {
-            offset = Math.max(Math.max(x - startX, y - startY), this.offset);
+            offset = Math.max(Math.max(Math.abs(x - startX), Math.abs(y - startY)), this.offset);
             if (offset > VALID_VALUE) {
                 isValid = true;
             }
