@@ -2,6 +2,8 @@ package com.vachel.editor.clip;
 
 import android.graphics.RectF;
 
+import com.vachel.editor.PictureEditor;
+
 public enum Anchor {
     LEFT(1),
     RIGHT(2),
@@ -36,7 +38,8 @@ public enum Anchor {
             }
         }
 
-        frame.set(theFrame[0], theFrame[2], theFrame[1], theFrame[3]);
+        float maxBottom = win.bottom - render.getClipMargin() - PictureEditor.getInstance().getClipRectMarginBottom();
+        frame.set(theFrame[0], theFrame[2], theFrame[1], Math.min(theFrame[3], maxBottom));
     }
 
     public static float revise(float v, float min, float max) {

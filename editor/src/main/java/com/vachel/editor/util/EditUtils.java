@@ -3,11 +3,11 @@ package com.vachel.editor.util;
 import android.graphics.Matrix;
 import android.graphics.RectF;
 
+import com.vachel.editor.PictureEditor;
 import com.vachel.editor.bean.EditState;
 
 
 public class EditUtils {
-
     private static final Matrix M = new Matrix();
 
     private EditUtils() {
@@ -23,7 +23,7 @@ public class EditUtils {
     }
 
     public static void fitCenter(RectF win, RectF frame, float padding) {
-        fitCenter(win, frame, padding, padding, padding, padding);
+        fitCenter(win, frame, padding, padding, padding, padding + PictureEditor.getInstance().getClipRectMarginBottom());
     }
 
     public static void fitCenter(RectF win, RectF frame, float paddingLeft, float paddingTop, float paddingRight, float paddingBottom) {

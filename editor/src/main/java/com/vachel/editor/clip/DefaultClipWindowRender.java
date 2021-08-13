@@ -5,8 +5,10 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
+import com.vachel.editor.PictureEditor;
+
 public class DefaultClipWindowRender implements EditClipWindow.IClipRender {
-    float CLIP_MARGIN = 15f; // 裁剪区域的边距
+    float CLIP_MARGIN = PictureEditor.getInstance().getClipRectMarginNormal(); // 裁剪区域的边距
     float CLIP_CORNER_SIZE = 42f; // 角尺寸
     float CLIP_THICKNESS_CELL = 2f; // 内边厚度
     float CLIP_THICKNESS_FRAME = 4f; //外边框厚度

@@ -18,7 +18,7 @@ import com.vachel.editor.ui.sticker.StickerView;
 public class PictureEditor {
     private static volatile PictureEditor sInstance;
 
-    private float maxScale = 5; // 编辑的图片编辑过程中双指最大放大倍数
+    private float maxScale = 12; // 编辑的图片编辑过程中双指最大放大倍数
     private int loadPicSizeLimit = 1080 * 5;//编辑的图片过大时，根据最大宽高限制值截取一部分来编辑
     // 编辑后的图片保存的相对路径： AndroidQ以上在DCIM+relativePath下， AndroidQ以下保存在SDCard+relativePath下
     // 注意前后不要加斜杠/
@@ -34,6 +34,9 @@ public class PictureEditor {
     // 涂鸦画笔支持的颜色组， checkColor为默认选中颜色（doodleColors中的一个）
     private int[] doodleColors;
     private @ColorInt int checkColor = 0;
+    // 剪裁模式下，剪裁框太大会和全面屏手势冲突，剪裁框无法选中， 两侧和底部区域至少保持一定距离
+    private float clipRectMarginBottom = 105;
+    private float clipRectMarginNormal = 45;
 
     private PictureEditor() {
     }
@@ -191,6 +194,23 @@ public class PictureEditor {
             return context.getResources().getColor(R.color.image_color_red);
         }
         return checkColor;
+    }
+
+    public float getClipRectMarginBottom() {
+        return clipRectMarginBottom;
+    }
+
+    public PictureEditor setClipRectMarginBottom(float clipRectMarginBottom) {
+        this.clipRectMarginBottom = clipRectMarginBottom;
+        return this;
+    }
+
+    public float getClipRectMarginNormal() {
+        return clipRectMarginNormal;
+    }
+
+    public void setClipRectMarginNormal(float clipRectMarginNormal) {
+        this.clipRectMarginNormal = clipRectMarginNormal;
     }
 
 }
