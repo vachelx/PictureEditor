@@ -14,4 +14,6 @@ public interface IStickerParent {
     void invalidate();
 
     int getScrollY();
+
+    float getContainerScale();
 }

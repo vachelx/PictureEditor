@@ -529,6 +529,11 @@ public class PictureEditView extends FrameLayout implements Runnable, ScaleGestu
     }
 
     @Override
+    public float getContainerScale() {
+        return mPicPresenter.getScale();
+    }
+
+    @Override
     public void onAnimationUpdate(ValueAnimator animation) {
         mPicPresenter.onEditAnimationUpdate(animation.getAnimatedFraction());
         toApplyEditState((EditState) animation.getAnimatedValue());

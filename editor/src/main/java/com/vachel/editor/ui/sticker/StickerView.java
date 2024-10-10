@@ -81,7 +81,7 @@ public abstract class StickerView extends ViewGroup implements ISticker, View.On
 
     @Override
     public void setScale(float scale) {
-        float maxScale = PictureEditor.getInstance().getMaxStickerScale();
+        float maxScale = PictureEditor.getInstance().getMaxStickerScale() * mIStickerParent.getContainerScale();
         if (scale > maxScale) {
             scale = maxScale;
         }
